@@ -1,5 +1,5 @@
 
-from board import create_board, make_move, is_valid_move, check_winner
+from game.board import create_board, make_move, is_valid_move, check_winner
 
 
 def test_create_board():
@@ -10,19 +10,19 @@ def test_create_board():
 
 
 def test_valid_move():
-    board = create_board(5)
+    board = create_board(6)
 
     assert is_valid_move(board, 2, 3)
 
 
 def test_invalid_move():
-    board = create_board(5)
+    board = create_board(6)
 
     assert not is_valid_move(board, 8, 2)
 
 
 def test_occupied_cell():
-    board = create_board(5)
+    board = create_board(6)
 
     make_move(board, 2, 2, 1)
 
@@ -30,7 +30,7 @@ def test_occupied_cell():
 
 
 def test_make_move():
-    board = create_board(5)
+    board = create_board(6)
 
     result = make_move(board, 1, 2, 2)
 
